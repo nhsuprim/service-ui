@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.Container {
+  max-width: 1260px;
+
+  max-height: 80vh;
+  margin: 0 auto;
+}
+
+hr {
+  height: 5px;
+  background: #e8e8e8;
+  width: 600px;
+  margin: 20px 0;
+}
+
+.NavLink {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.NavLink:hover {
+  color: blue;
+}
