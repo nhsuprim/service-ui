@@ -33,6 +33,7 @@ const Page = () => {
             redirect: false,
             email: email,
             password: password,
+            // userID: userID,
         });
 
         if (res?.error) {
@@ -42,7 +43,7 @@ const Page = () => {
             setEmail("");
             setPassword("");
             setError("");
-            router.replace("/");
+            router.push("/");
         }
     };
 

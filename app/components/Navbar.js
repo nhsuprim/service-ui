@@ -6,7 +6,7 @@ import React from "react";
 
 const Navbar = () => {
     const { data: session } = useSession();
-    console.log(session);
+
     return (
         <div>
             <div className=" navbar fixed  z-50 bg-opacity-80 bg-white">
@@ -38,18 +38,18 @@ const Navbar = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/products" className="NavLink">
-                                    products
+                                <Link href="/services" className="NavLink">
+                                    services
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/contact" className="NavLink">
-                                    contact
+                                    Contact
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/cart" className="NavLink">
-                                    cart
+                                <Link href="/dashboard" className="NavLink">
+                                    Dashboard
                                 </Link>
                             </li>
                             <li>
@@ -58,9 +58,14 @@ const Navbar = () => {
                                         <h1 className="text-lg font-semibold">
                                             {session?.user?.name}
                                         </h1>
-                                        <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                                        <ul className="px-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
                                             <li>
-                                                <button>Go to profile</button>
+                                                <Link
+                                                    href="/profile"
+                                                    className="NavLink"
+                                                >
+                                                    Profile
+                                                </Link>
                                             </li>
                                             <li>
                                                 <button
@@ -81,9 +86,9 @@ const Navbar = () => {
                     </div>
                     <Link
                         href="/"
-                        className="pb-10 btn btn-ghost normal-case  text-xl"
+                        className=" btn btn-ghost normal-case  text-xl"
                     >
-                        SUPREME <br /> SHOP
+                        Service Station
                     </Link>
                 </div>
                 <div className="navbar-end hidden lg:flex  ">
@@ -94,18 +99,18 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link href="/products" className="NavLink">
-                                products
+                            <Link href="/services" className="NavLink">
+                                services
                             </Link>
                         </li>
                         <li>
-                            <Link href="/" className="NavLink">
-                                contact
+                            <Link href="/contact" className="NavLink">
+                                Contact
                             </Link>
                         </li>
                         <li>
-                            <Link href="/" className="NavLink">
-                                cart
+                            <Link href="/dashboard" className="NavLink">
+                                Dashboard
                             </Link>
                         </li>
                         <li>
@@ -116,12 +121,12 @@ const Navbar = () => {
                                     </summary>
                                     <ul className=" shadow menu dropdown-content z-[1] bg-base-300 rounded-box w-full">
                                         <li>
-                                            <button
-                                                href="/"
-                                                className="font-semibold"
+                                            <Link
+                                                href="/user/profile"
+                                                className="NavLink"
                                             >
                                                 Profile
-                                            </button>
+                                            </Link>
                                         </li>
                                         <li>
                                             <button onClick={() => signOut()}>

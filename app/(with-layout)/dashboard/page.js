@@ -1,12 +1,12 @@
+import React from "react";
 import Dashboard from "../../components/Dashboard/Dashboard";
 
-const AboutPage = () => {
+const page = () => {
     return (
-        <div className="flex">
+        <div className="">
             <Dashboard />
-            <h1>This is an about page</h1>
         </div>
     );
 };
 
-export default AboutPage;
+export default page;

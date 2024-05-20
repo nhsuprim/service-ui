@@ -3,23 +3,46 @@
 @tailwind utilities;
 
 .Container {
-  max-width: 1260px;
+    max-width: 1260px;
 
-  max-height: 80vh;
-  margin: 0 auto;
+    max-height: 80vh;
+    margin: 0 auto;
 }
 
 hr {
-  height: 5px;
-  background: #e8e8e8;
-  width: 600px;
-  margin: 20px 0;
+    height: 5px;
+    background: #e8e8e8;
+    width: 600px;
+    margin: 20px 0;
 }
 
 .NavLink {
-  font-weight: 700;
-  text-transform: uppercase;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 .NavLink:hover {
-  color: blue;
+    color: blue;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #03c2fc;
+    margin-bottom: 20px;
+}
+
+.submit-btn {
+    background-color: #03c2fc;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+.profile-img {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    border: 5px solid #03c2fc;
 }

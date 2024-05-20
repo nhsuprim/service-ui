@@ -18,10 +18,6 @@ export const authOptions: NextAuthOptions = {
             },
 
             async authorize(credentials, req): Promise<any> {
-                const { email, password } = credentials as {
-                    email: string;
-                    password: string;
-                };
                 const res = await fetch("http://localhost:8080/users/login", {
                     method: "POST",
                     body: JSON.stringify({
@@ -59,5 +55,9 @@ export const authOptions: NextAuthOptions = {
             session.user = token as any;
             return session;
         },
+    },
+
+    pages: {
+        signIn: "/login",
     },
 };
