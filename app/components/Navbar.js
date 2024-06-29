@@ -48,8 +48,8 @@ const Navbar = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/dashboard" className="NavLink">
-                                    Dashboard
+                                <Link href="/order-cart" className="NavLink">
+                                    Order Cart
                                 </Link>
                             </li>
                             <li>
@@ -65,6 +65,14 @@ const Navbar = () => {
                                                     className="NavLink"
                                                 >
                                                     Profile
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link
+                                                    href="/dashboard"
+                                                    className="NavLink"
+                                                >
+                                                    Business Dashboard
                                                 </Link>
                                             </li>
                                             <li>
@@ -109,8 +117,8 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link href="/dashboard" className="NavLink">
-                                Dashboard
+                            <Link href="/order-cart" className="NavLink">
+                                Order Cart
                             </Link>
                         </li>
                         <li>
@@ -129,7 +137,18 @@ const Navbar = () => {
                                             </Link>
                                         </li>
                                         <li>
-                                            <button onClick={() => signOut()}>
+                                            <Link
+                                                href="/dashboard"
+                                                className="NavLink"
+                                            >
+                                                Business Dashboard
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <button
+                                                className="font-semibold "
+                                                onClick={() => signOut()}
+                                            >
                                                 Log out
                                             </button>
                                         </li>

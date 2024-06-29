@@ -43,13 +43,17 @@ const Page = () => {
             setEmail("");
             setPassword("");
             setError("");
-            router.push("/");
+            router.push("/user/profile");
         }
     };
 
-    if (sessionStatus === "loading") {
-        return <h1 className="pt-40">Loading...</h1>;
-    }
+    // if (sessionStatus === "loading") {
+    //     return <h1 className="pt-40">Loading...</h1>;
+    // }
+
+    // if (sessionStatus === "authenticated") {
+    //     console.log("ok", session);
+    // }
 
     return (
         <form
@@ -100,13 +104,13 @@ const Page = () => {
                     Register
                 </button>
             </Link>
-            <button
+            {/* <button
                 type="submit"
                 className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700"
                 onClick={() => signIn("google")}
             >
                 Google
-            </button>
+            </button> */}
         </form>
     );
 };

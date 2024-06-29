@@ -1,7 +1,7 @@
 "use client";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 import Select from "react-select";
 import uploadImageToImgBB from "../UploadImgToImgBB";
 import UserProfile from "./UserProfile";
@@ -64,7 +64,7 @@ const Profile = ({ session }) => {
         } catch (e) {
             console.error("Error:", e);
         }
-        toast("Here is your toast.");
+        // toast("Here is your toast.");
 
         console.log(data);
     };
@@ -120,7 +120,8 @@ const Profile = ({ session }) => {
                         <input
                             required
                             className="py-5 ml-8"
-                            type="file"serviceName
+                            type="file"
+                            serviceName
                             onBlur={handleImageUpload}
                         />
                     </div>

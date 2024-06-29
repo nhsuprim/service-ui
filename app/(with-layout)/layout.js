@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
             <SessionWrapper>
                 <Navbar />
                 <div className="text-center py-20 h-full">{children}</div>
-                <Footer />
+                <Footer className="" />
             </SessionWrapper>
         </>
     );

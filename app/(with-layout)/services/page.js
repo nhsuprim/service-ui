@@ -33,14 +33,17 @@ const Page = () => {
     );
 
     return (
-        <div className="h-full w-[1200px] mx-auto">
+        <div className="container mx-auto p-4">
             {loading ? (
                 <div className="flex justify-center items-center h-full">
                     <p>Loading...</p>
                 </div>
             ) : (
-                <div className="flex flex-wrap gap-8">
-                    <div className="my-4 w-1/4">
+                <div className="flex flex-col md:flex-row md:gap-8">
+                    <div className="my-4 w-full md:w-1/4">
+                        <h1 className="text-start font-medium">
+                            Search Services
+                        </h1>
                         <input
                             type="text"
                             placeholder="Search services"
@@ -48,6 +51,9 @@ const Page = () => {
                             onChange={(e) => setSearchTerm(e.target.value)}
                             className="w-full p-2 border border-gray-300 rounded mb-4"
                         />
+                        <h1 className="text-start font-medium">
+                            Filtered Services
+                        </h1>
                         <input
                             type="text"
                             placeholder="Filter by category"
@@ -60,10 +66,16 @@ const Page = () => {
                             placeholder="Filter by division"
                             value={divisionFilter}
                             onChange={(e) => setDivisionFilter(e.target.value)}
-                            className="w-full p-2 border border-gray-300 rounded mb-4"
+                            className="w-full p-2 border border-gray-300 rounded mb-10"
                         />
+                        <Link
+                            href={"/request-service"}
+                            className="block border border-black p-2 rounded-xl text-teal-400 font-bold hover:bg-teal-400 hover:text-black transition mt-10 text-center"
+                        >
+                            Request For Services
+                        </Link>
                     </div>
-                    <div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {filteredServices.map((service) => (
                             <Link
                                 key={service.id}

@@ -25,18 +25,21 @@ const TopBanner = () => {
             }}
             navigation={true}
             modules={[Autoplay, Pagination, Navigation]}
-            className="mySwiper mx-auto px-24"
+            className="mySwiper mx-auto px-24 container-fluid h-fit"
         >
             <SwiperSlide>
                 <img
-                    className=""
-                    width={600}
-                    height={600}
+                    className="w-full"
+                    // width={600}
+
                     src="https://png.pngtree.com/png-vector/20220608/ourlarge/pngtree-plumbing-service-with-plumber-workers-repair-png-image_4902037.png"
                 />
             </SwiperSlide>
             <SwiperSlide>
-                <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/electrical-service-video-poster-temp-design-template-e7c42f455da029a15c0c1a7c27238c60_screen.jpg?ts=1601680135" />
+                <img
+                    className="w-full"
+                    src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/electrical-service-video-poster-temp-design-template-e7c42f455da029a15c0c1a7c27238c60_screen.jpg?ts=1601680135"
+                />
             </SwiperSlide>
             {/* <SwiperSlide>
                 <img src="/home/03.png" />

@@ -8,8 +8,8 @@ const UpdateServices = ({ service }) => {
     const router = useRouter();
     // console.log(service);
     const [serviceName, setServiceName] = useState(service?.serviceName);
-    const [category, setCategory] = useState(service.category);
-    const [discription, setDiscription] = useState(service.discription);
+    const [category, setCategory] = useState(service?.category);
+    const [discription, setDiscription] = useState(service?.discription);
     const [image, setImage] = useState(service?.image);
     const [cost, setCost] = useState(service?.price);
     const [user, setUser] = useState({});

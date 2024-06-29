@@ -23,12 +23,12 @@ const Dashboard = () => {
                     </li>
                     <li
                         className={`${
-                            pathname === "/dashboard/orders"
+                            pathname === "/dashboard/order"
                                 ? "bg-gray-600 px-4 py-2 rounded-md"
                                 : "px-4 py-2"
                         }`}
                     >
-                        <Link href="/dashboard/orders">Orders</Link>
+                        <Link href="/dashboard/order">Order</Link>
                     </li>
                     <li>
                         <Link
