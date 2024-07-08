@@ -6,11 +6,14 @@ import Select from "react-select";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useRouter } from "next/navigation";
 
 const page = ({ params }) => {
     const [order, setOrder] = useState({});
     const [loading, setLoading] = useState(true);
     const [selectedStatus, setSelectedStatus] = useState(null);
+
+    const router = useRouter();
 
     const statusOptions = [
         { value: "received", label: "Received" },
@@ -96,14 +99,14 @@ const page = ({ params }) => {
                 data
             );
             console.log(res);
-            toast.success("Order submitted successfully!", {
+            toast.success("Order Updated successfully!", {
                 position: "top-right",
             });
         } catch (e) {
             console.error("Error:", e);
         }
 
-        // router.push("/services");
+        router.push("/services");
     };
 
     console.log(order);

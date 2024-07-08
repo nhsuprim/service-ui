@@ -1,5 +1,9 @@
 "use client";
+
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Import Toastify CSS
 
 const RequestServiceForm = () => {
     const [formData, setFormData] = useState({
@@ -10,27 +14,39 @@ const RequestServiceForm = () => {
         serviceCategory: "",
         serviceDescription: "",
     });
+    const Router = useRouter();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // try {
-        //     const response = await fetch("https://example.com/api/endpoint", {
-        //         method: "POST",
-        //         headers: {
-        //             "Content-Type": "application/json",
-        //         },
-        //         body: JSON.stringify(formData),
-        //     });
-        //     if (response.ok) {
-        //         // Handle success, e.g., show a success message
-        //         console.log("Form submitted successfully!");
-        //     } else {
-        //         // Handle error response from server
-        //         console.error("Failed to submit form");
-        //     }
-        // } catch (error) {
-        //     console.error("Error submitting form:", error);
-        // }
+        try {
+            const response = await fetch(
+                "http://localhost:8080/requestServices",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(formData),
+                }
+            );
+            if (response.ok) {
+                console.log("Form submitted successfully!");
+                toast.success("Requested submitted successfully!", {
+                    position: "top-right",
+                });
+                Router.push("/services"); // Redirect to services page after form submission
+            } else {
+                console.error("Failed to submit form");
+                toast.error("Failed to submit form", {
+                    position: "top-right",
+                });
+            }
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            toast.error("Error submitting form", {
+                position: "top-right",
+            });
+        }
         console.log(formData);
     };
 
@@ -152,6 +168,7 @@ const RequestServiceForm = () => {
                     </button>
                 </div>
             </form>
+            <ToastContainer /> {/* Ensure ToastContainer is here */}
         </div>
     );
 };

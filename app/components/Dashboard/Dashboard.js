@@ -30,6 +30,17 @@ const Dashboard = () => {
                     >
                         <Link href="/dashboard/order">Order</Link>
                     </li>
+                    <li
+                        className={`${
+                            pathname === "/dashboard/request-service"
+                                ? "bg-gray-600 px-4 py-2 rounded-md"
+                                : "px-4 py-2"
+                        }`}
+                    >
+                        <Link href="/dashboard/request-service">
+                            Request Service
+                        </Link>
+                    </li>
                     <li>
                         <Link
                             className={`${
