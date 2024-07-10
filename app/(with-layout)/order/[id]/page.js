@@ -74,7 +74,7 @@ const Page = ({ params }) => {
                 toast.success("Order submitted successfully!", {
                     position: "top-right",
                 });
-                router.push("/services");
+                router.push("/payment");
             } else {
                 toast.error("Failed to submit order. Please try again.", {
                     position: "top-right",

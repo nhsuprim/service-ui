@@ -41,7 +41,7 @@ const Dashboard = () => {
                             Request Service
                         </Link>
                     </li>
-                    <li>
+                    {/* <li>
                         <Link
                             className={`${
                                 pathname === "/about"
@@ -52,7 +52,7 @@ const Dashboard = () => {
                         >
                             About
                         </Link>
-                    </li>
+                    </li> */}
                 </ul>
             </div>
         </div>

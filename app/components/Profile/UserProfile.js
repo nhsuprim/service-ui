@@ -3,6 +3,9 @@ import Link from "next/link";
 import React, { useState } from "react";
 import uploadImageToImgBB from "../UploadImgToImgBB";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useRouter } from "next/navigation";
 
 const UserProfile = ({ filterdData }) => {
     const [userName, setUserName] = useState(filterdData.username);
@@ -11,6 +14,7 @@ const UserProfile = ({ filterdData }) => {
     const [address, setAddress] = useState(filterdData.address);
     const [phone, setPhone] = useState(filterdData.phone);
     const [city, setCity] = useState(filterdData.division);
+    const Router = useRouter();
 
     const handleImageUpload = async (e) => {
         const file = e.target.files[0];
@@ -46,8 +50,12 @@ const UserProfile = ({ filterdData }) => {
         } catch (e) {
             console.error("Error:", e);
         }
+        toast.success("Request submitted successfully!", {
+            position: "top-right",
+        });
+        Router.push("/");
         // toast("Here is your toast.");
-        alert("OK");
+        // alert("OK");
 
         console.log(data);
     };
@@ -106,6 +114,15 @@ const UserProfile = ({ filterdData }) => {
                             </td>
                         </tr>
                         <tr>
+                            <td>Age</td>
+                            <td>
+                                <input
+                                    placeholder="age"
+                                    // onChange={(e) => setCity(e.target.value)}
+                                />
+                            </td>
+                        </tr>
+                        <tr>
                             <td>Contact</td>
                             <td>
                                 <input
@@ -121,6 +138,7 @@ const UserProfile = ({ filterdData }) => {
                     Update Profile
                 </button>
             </div>
+            <ToastContainer />
         </div>
     );
 };

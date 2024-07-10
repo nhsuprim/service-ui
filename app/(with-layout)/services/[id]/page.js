@@ -38,7 +38,7 @@ const page = ({ params }) => {
                         <h1 className="title pb-12">{service.serviceName}</h1>
                         <p className="text-justify">{service.discription}</p>
                         <p className="font-semibold">
-                            Service Cost:{" "}
+                            Service Cost Start From:{" "}
                             <span className="text-red-500 font-bold">
                                 {service.price} TK
                             </span>
@@ -48,6 +48,9 @@ const page = ({ params }) => {
                         </p>
                         <p className="font-semibold">
                             Service Area: {service.userId.division}
+                        </p>
+                        <p className="font-semibold">
+                            Service Provider: {service.userId.username}
                         </p>
                         <Link
                             href={`/order/${service.id}`}
